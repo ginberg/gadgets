@@ -1,20 +1,20 @@
-# gadgets
+# Gadgets
 
-The goal of gadgets is to ...
+This package contains some handy Rstudio gadgets.
 
 ## Installation
 
-You can install the released version of gadgets from [CRAN](https://CRAN.R-project.org) with:
+You can install the version of gadgets from this repo.
 
 ``` r
-install.packages("gadgets")
+library(devtools)
+install_github("ginberg/gadgets")
 ```
 
-## Example
+After installation, the addin should be available in the 'Addins' widget in RStudio.
 
-This is a basic example which shows you how to solve a common problem:
+## Usage
 
-``` r
-## basic example code
-```
+Select a text in your document or console and execute the Google search addin.
+
 
