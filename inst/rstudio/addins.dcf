@@ -1,0 +1,4 @@
+Name: Google search
+Description: Google search with given text
+Binding: googleSearchAddin
+Interactive: true
