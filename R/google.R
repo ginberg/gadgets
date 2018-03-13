@@ -21,8 +21,12 @@ googleSearchAddin <- function() {
       return((HTML(readLines(URL))))
     }
     output$inc<-renderUI({
-      searchString <- context$contents
+      searchString <- context$selection[[1]]$text
       getPage(searchString)
+    })
+
+    observeEvent(input$done, {
+      stopApp()
     })
   }
 
