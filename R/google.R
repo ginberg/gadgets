@@ -11,14 +11,15 @@ googleSearchAddin <- function() {
 
   server <- function(input, output, session) {
 
+    # stop app on browser close
+    session$onSessionEnded(stopApp)
+
     # Get the document context.
     context <- rstudioapi::getActiveDocumentContext()
-    print(context)
 
     getPage<-function(searchString) {
       URL <- URLencode(paste0('https://www.google.com/search?q=', searchString))
-      print(URL)
-      return((HTML(readLines(URL))))
+      return((HTML(readLines(URL, warn=FALSE))))
     }
     output$inc<-renderUI({
       searchString <- context$selection[[1]]$text
@@ -30,5 +31,5 @@ googleSearchAddin <- function() {
     })
   }
 
-  runGadget(ui, server)
+  runGadget(ui, server, viewer = browserViewer())
 }
